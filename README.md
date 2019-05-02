@@ -4,9 +4,9 @@ The following repository stores documentation and samples, recommended practices
 Some of the areas to be covered include:
 ## Netcore vs. Net Framework
 
-Bot Builder V3 is targeting netframework 4.6.  Bot Builder dotnet V4 is targeting .NET Standard 2.0.  This means it can be used in projects targeting netstandard2.0, netcoreapp2.0, netframework 4.6.1, and above etc.  Refer to https://github.com/dotnet/standard/blob/master/docs/versions.md for more version campatibility information.
+Bot Builder V3 is targeting netframework 4.6.  Bot Builder dotnet V4 is targeting .NET Standard 2.0.  This means it can be used in projects targeting netstandard2.0, netcoreapp2.0, netframework 4.6.1, and above etc.  Refer to [versions](https://github.com/dotnet/standard/blob/master/docs/versions.md) for more version campatibility information.
 
-The Bot Framework dotnet sample projects are mostly demonstrating how to build bots targeting netcoreapp2.1: https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore  We recommend upgrading your bot code to target netcore.  However, we also provide an example targeting netframework 4.6.1: https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi  
+The Bot Framework dotnet sample projects are mostly demonstrating how to build bots targeting netcoreapp2.1: [samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore)  We recommend upgrading your bot code to target netcore.  However, we also provide an example targeting netframework 4.6.1: [csharp_webapi](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi)
 
 
 ## Store Conversation
@@ -70,7 +70,7 @@ Task WriteAsync(IDictionary<string, object> changes, CancellationToken cancellat
 ```
 
 Usage: 
-```charp
+```csharp
 var storageOptions = new CosmosDbStorageOptions()
 {
     AuthKey = "YourAuthKey",
@@ -92,19 +92,27 @@ services.AddSingleton(conversationState);
 
 
 * Table/Blob specific
+    
     V3: Microsoft.Bot.Builder.Azure.TableBotDataStore
 
     V4: Microsoft.Bot.Builder.Azure.AzureBlobStorage
 
 * SQL specific
+    
     V3: Microsoft.Bot.Builder.Azure.SqlBotDataStore
 
     V4: Bot.Builder.Community.Storage.EntityFramework
+    - [Package](https://www.nuget.org/packages/Bot.Builder.Community.Storage.EntityFramework)
+    - [Source](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/develop/libraries/Bot.Builder.Community.Storage.EntityFramework)
 
 * Form Flow
+    
     V3: Microsoft.Bot.Builder.FormFlow
 
     V4: Bot.Builder.Community.Dialogs.FormFlow
+    - [Package](https://www.nuget.org/packages/Bot.Builder.Community.Dialogs.FormFlow)
+    - [Source](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/tree/master/libraries/Bot.Builder.Community.Dialogs.FormFlow)
+
 
 * Dialog Type XYZ…
 
@@ -115,6 +123,11 @@ services.AddSingleton(conversationState);
 * QnA Maker
 
 * LUIS
+
+    V3: Microsoft.Bot.Builder.Dialogs.LuisDialog
+
+    V4: Bot.Builder.Community.Dialogs.Luis.LuisDialog
+    - [Source](https://github.com/scheyal/BotV3V4Migration/tree/master/Bot.Builder.Community.Dialogs.Luis)
 
 * Move in/out of .bots, ARM templates, new cli's
 
